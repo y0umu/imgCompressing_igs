@@ -1,0 +1,28 @@
+全局变量（global）
+下表只在主程序退出时清除
+变量名						描述
+QUANTIZING_BITS				量化位数
+IMG_SRC						输入图像的矩阵
+IMAGE_FILE_INPUT			输入图像的文件名（完整路径）。给OpenCV处理使用的，其他地方用不到
+
+下表只在demo退出时清除
+变量名						描述
+BUTTON_NEXT_CURRENT_CNT		“下一步”按钮按下次数计数器。用于回调函数button_next_Callback
+    % IGS_DEMO_DATA是前台表格数据，MAT_IGS_DEMO是后台表格数据
+    % 第1列表示灰度级
+    % 第2列表示和
+    % 第3列表示IGS量化值
+IGS_DEMO_DATA
+MAT_IGS_DEMO				
+IGS_DEMO_LINE				当选择演示数据源为主程序中的图像时，选择图像的第IGS_DEMO_LINE行
+IGS_DEMO_PIXELS				当选择演示数据源为主程序中的图像时，选择IGS_DEMO_LINE那一行的前IGS_DEMO_PIXELS个像素
+
+
+保存在控件的Userdata域中的变量（在imgCompressing_igs.m中）
+控件句柄						此控件的Userdata的作用
+handles.axes_imgSrc				保存原图像的图像对象句柄。（用来实现点击图片在新窗口中显示的功能，见函数imgSrc_ButtonDownFcn）
+handles.axes_imgIgs				保存IGS量化处理之后的图像的图像对象句柄。（用来实现点击图片在新窗口中显示的功能，见函数imgIgs_ButtonDownFcn）
+
+保存在控件的Userdata域中的变量（在imgCompressing_igs_demo.m中）
+控件句柄						此控件的Userdata的作用
+handles.edit_customSrc			double型，保存输入序列的像素个数
